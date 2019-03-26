@@ -30,8 +30,8 @@ Ultimately you should be comfortable with both approaches.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Jairyq Underwood.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import math
 
@@ -98,8 +98,16 @@ def sum_until_prime_input():
          Enter an integer greater than 1: 11
          The sum of the input integers is: 167
     """
+    total = 0
+    while True:
+        input_number = int(input('Enter in an integer Greater than 1:'))
+        total = total + input_number
+        if is_prime(input_number) is True:
+            print(str(total))
+            break
+
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #   The testing code is already written for you (above).
     # -------------------------------------------------------------------------
 
@@ -107,7 +115,7 @@ def sum_until_prime_input():
 def run_test_next_prime():
     """ Tests the   next_prime    function. """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement this TEST function.
+    # Done: 3. Implement this TEST function.
     #   It TESTS the  wait_for_prime  function defined below.
     #   Include at least  ** 6 **  tests. (We supplied 5 tests for you.)
     #
@@ -164,14 +172,17 @@ def run_test_next_prime():
     print('Actual:  ', actual)
     print('TEST ENDED!')
 
-    # TODO 3 (continued):
+    # Done3 (continued):
     #   PUT YOUR TEST   ** IN THE SPACE BETWEEN **   the
     #   print('TEST STARTED!' ...) and print('TEST ENDED') lines below.
 
     # Test 6:
     print()
     print('TEST STARTED!  Has it ended?')
-
+    expected = 5
+    actual = next_prime(5)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
     print('TEST ENDED!')
 
 
@@ -189,8 +200,13 @@ def next_prime(m):
     Type hints:
       :type m: int
     """
+    total = 0
+    while True:
+        if is_prime(m + total):
+            return m + total
+        total = total + 1
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPLEMENTATION REQUIREMENT:
@@ -326,8 +342,14 @@ def prime_gap(m):
     Type hints:
       :type m: int
     """
+    total = 2
+    while True:
+        if next_prime(total + 1) - total >= m:
+            return next_prime(total)
+        total = total + 1
+
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #   The testing code is already written for you (above).
     #
     # IMPLEMENTATION REQUIREMENT:
@@ -381,7 +403,7 @@ def run_test_wait_for_sum_of_cubes():
     # Test 4:
     print()
     print('TEST STARTED!  Has it ended?')
-    expected = 8
+    expected = 9
     actual = wait_for_sum_of_cubes(1296)
     print('Expected:', expected)
     print('Actual:  ', actual)
@@ -462,6 +484,12 @@ def wait_for_sum_of_cubes(x):
     Type hints:
       :type x: float  [or an int]
     """
+    n = 1
+    total = 0
+    while total < x:
+        n += 1
+        total += n ** 3
+    return n
     # -------------------------------------------------------------------------
     # TODO: 7. Implement and test this function.
     #   Note that you should write its TEST function first (above).

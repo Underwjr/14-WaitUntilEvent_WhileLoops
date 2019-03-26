@@ -3,9 +3,9 @@ This module demonstrates lets you practice INPUT from the CONSOLE.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
-
+         and Jairyq Underwood.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
+import math
 
 def main():
     """ TESTs the functions in this module (by calling them). """
@@ -30,8 +30,12 @@ def double_a_float():
          Enter a number: -3.14
          -6.28
     """
+    number = float(input('Input number here:'))
+    print(str(number) + ' is an interesting number!')
+    print('Your number doubled is ' + str(number * 2))
+
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # Done 2. Implement and test this function.
     #   The testing code is already written for you (above).
     # -------------------------------------------------------------------------
 
@@ -61,8 +65,15 @@ def print_an_integer_many_times():
          10
          10
     """
+    print('')
+    print('------------')
+    print('Many_times function')
+    print('------------')
+    number = int(input('Enter an Integer:'))
+    for k in range(number):
+        print(str(number * 2))
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done 3. Implement and test this function.
     #   The testing code is already written for you (above).
     # -------------------------------------------------------------------------
 
@@ -80,8 +91,14 @@ def print_an_integer_many_times_on_one_row():
          Enter an integer: 5
          1010101010
     """
+    print('')
+    print('-----------------------------')
+    print('Many_times function_one_rows')
+    print('-----------------------------')
+    number = int(input('Enter an Integer:'))
+    print(str(number * 2) * number)
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #   The testing code is already written for you (above).
     #
     # HINT: One way to print on a SINGLE line is to build up a string
@@ -120,8 +137,15 @@ def input_it_all():
          Peace & Love.
          Peace & Love.
     """
+    float_number = float(input('Enter a floating point number:'))
+    integer_number = int(input('Enter in a Positive Integers:'))
+    string_name = str(input('Enter in a cool string:'))
+    for k in range(integer_number):
+        print(str(math.sqrt(float_number)))
+    for k in range(integer_number):
+        print(str(string_name))
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #   The testing code is already written for you (above).
     # -------------------------------------------------------------------------
 
